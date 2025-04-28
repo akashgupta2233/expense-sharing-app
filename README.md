@@ -1,61 +1,98 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Expense Splitter
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Description
 
-## About Laravel
+Expense Splitter is a web application designed to help groups of people split expenses equally. Users can create groups, add members, and track shared expenses. The app will automatically calculate how much each person should contribute based on the expenses added. It’s perfect for groups of friends, roommates, or anyone sharing costs.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **Create a Group**: Allows users to create a group with a custom name.
+- **Add Users**: Easily add members to the group by entering their usernames.
+- **Add Expenses**: Record expenses and describe them, such as "Dinner" or "Transport".
+- **Split Expenses**: Automatically splits the total expenses equally among all members of the group.
+- **Clear Expenses**: Option to clear all added expenses and reset the group.
+- **Responsive Design**: Optimized for both desktop and mobile devices.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Technologies Used
 
-## Learning Laravel
+- **Backend**: PHP (Laravel Framework)
+- **Frontend**: HTML, CSS, TailwindCSS
+- **Session Management**: Used to store group, user, and expense data.
+- **Hosting**: Can be hosted on platforms like Heroku, DigitalOcean, or any PHP-supported hosting.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Installation
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Prerequisites
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- PHP 8.x or above
+- Composer
+- Laravel installed (can be installed via `composer create-project --prefer-dist laravel/laravel projectName`)
 
-## Laravel Sponsors
+### Steps to Run Locally
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+1. **Clone the repository**:
 
-### Premium Partners
+    ```bash
+    git clone https://github.com/akashgupta2233/expense-sharing-app.git
+    ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development/)**
-- **[Active Logic](https://activelogic.com)**
+2. **Navigate into the project folder**:
 
-## Contributing
+    ```bash
+    cd expense-splitter
+    ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+3. **Install dependencies**:
 
-## Code of Conduct
+    ```bash
+    composer install
+    ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+4. **Set up your environment file**:
 
-## Security Vulnerabilities
+    Copy the `.env.example` file to `.env`:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+    ```bash
+    cp .env.example .env
+    ```
 
-## License
+5. **Generate the application key**:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+    ```bash
+    php artisan key:generate
+    ```
+
+6. **Run the server**:
+
+    ```bash
+    php artisan serve
+    ```
+
+    This will start the Laravel development server at `http://localhost:8000`.
+
+7. **Access the app**:
+
+    Open your browser and navigate to [http://localhost:8000](http://localhost:8000) to use the Expense Splitter.
+
+## Usage
+
+### Create a Group
+1. Enter a name for your group in the input field and click the "Create Group" button.
+2. The group name will appear at the top of the page.
+
+### Add Users
+1. Add members to your group by entering their usernames and clicking the "Add" button.
+2. The users will appear below the form, and you can remove them if necessary.
+
+### Add Expenses
+1. Enter the expense amount and description, then click the "Add Expense" button.
+2. Expenses are displayed in a table below the form.
+
+### Split Expenses
+1. After adding expenses, click the "Split Expense Equally" button.
+2. The app will calculate how much each member needs to pay, which will be displayed below the button.
+
+### Clear Expenses
+1. If you want to reset the group, click the "Create New Group" button, which will clear all users, expenses, and reset the group.
+
+
